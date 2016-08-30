@@ -45,7 +45,7 @@ label {
 #modal {
   height: 100%;
   background-color: rgba(27, 162, 97, .8);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

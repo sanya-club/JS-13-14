@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+  <div class="test-wrap"></div>
+  <script type="text/tmpl" id="test">
+    <div class="container">
+      <h1><%=title%></h1>
+      <h4><%=subtitle%></h4>
+      <form action="#" method="post">
+        <ol>
+          <% for (var j = 0; j < QA.length; j++) {%>
+            <li>
+              <h3><%= QA[j].question %></h3>
+              <% for (var i = 0; i < QA[j].answers.length; i++) {%>
+                <p>
+                  <label>
+                    <input type="checkbox" name="question<%=j%>" id="a<%=i%>">
+                    <span>
+                      <%=QA[j].answers[i]%>
+                    </span>
+                  </label>
+                </p>
+                <% } %>
+            </li>
+            <% } %>
+        </ol>
+        <input class="btn" type="button" value="Проверить мои результаты" id="submit">
+      </form>
+    </div>
+  </script>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-wrapper">
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <div class="modal-body" id="modalBody">
+        <p>Some text in the modal.</p>
+      </div>
+      <button id="close" type="button" class="btn">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="js/jr-tmpl.js"></script>
+  <script src="js/createTest.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

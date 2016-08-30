@@ -31,13 +31,16 @@ $(function () {
       var $myAnswers = $checked.join(',');
       console.log('$myAnswers=', $myAnswers);
 
-      //      if ($myAnswers == '') {
-      //        $('.modal-title').text('uyuy');
-      //        $('.modal-body p').text('Вы прошли этот тест!fgfgfg');
-      //      }
+      
       if ($myAnswers == corectAnswers) {
         $('.modal-title').text('Поздравляем!');
         $('.modal-body p').text('Вы прошли этот тест!');
+      } else if ($myAnswers.length == 0) {
+        $('.modal-title').text('Упс!');
+        $('.modal-body p').text('Вы не выбрали ответы!');
+        $modal.css({
+          'backgroundColor': 'rgba(73, 99, 115, .8)'
+        });
       } else {
         $('.modal-title').text('Увы :(');
         $('.modal-body p').text('Вы не прошли этот тест! Попробуйте еще раз');
